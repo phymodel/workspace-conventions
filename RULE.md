@@ -7,8 +7,8 @@ always: false
 # Workspace conventions
 
 - Prefer minimal, focused diffs; do not refactor unrelated code.
-- This repo is **phymodel_studio** (`web_editor/`). Sibling **phymodel_agi** holds llm/omni/dataprep and the training `venv`.
-- Harness packages live under `.phymodel/harness/` in this repo (e.g. FBC). When running FBC from agi’s cwd: `python ../phymodel_studio/.phymodel/harness/...` and use agi’s `venv`.
+- Current workspace repos: **phymodel__studio** (ChatStudio + `web_editor/`), **phymodel__fbc-data-generation** (FBC Harness 独立包), **phymodel__llm-trainer** (训练 venv + llm/omni/dataprep).
+- FBC Harness 由 ChatStudio 缓存同步到 `~/.chatstudio/cache/harnesses/fbc-data-generation/`；运行 FBC 脚本时使用该路径，并选用 llm-trainer 的 venv。
 - Subagent personas under `.phymodel/subagents/<id>/SUBAGENT.md` — share via git; enable per Agent in the panel.
 - Conversation exports live under `.phymodel/conversations/` — treat as user data, not templates.
 - Use forward-slash relative paths from the workspace root in tool calls.
